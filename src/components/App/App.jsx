@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Statistics } from './Statistics/Statistics';
-import { FeedbackOptions } from './Buttons/FeedbackOptions';
-import { Section } from './Section/Section';
-import { Notification } from './Notification/Notification';
+import { Statistics } from '../Statistics/Statistics';
+import { FeedbackOptions } from '../Buttons/FeedbackOptions';
+import { Section } from '../Section/Section';
+import { Notification } from '../Notification/Notification';
+import Appcss from './app.module.css';
 
 export class App extends React.Component {
   state = {
@@ -43,7 +44,7 @@ export class App extends React.Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <div>
+      <div className={Appcss.wrapper}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
